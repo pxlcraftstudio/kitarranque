@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Arranque Digital · GRÁTIS · Pxlcraft Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F0F0F;--smoke:#1A1A1A;--fog:#2A2A2A;--stone:#6B6B6B;--sand:#A8A8A8;--pearl:#F2F0ED;--cream:#FAF9F6;--amber:#D4884A;--terra:#C4663E;--sage:#7A9E7E;--blue:#2B4C6F;--green:#00D26A;--green-dim:rgba(0,210,106,.08);--green-border:rgba(0,210,106,.2)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--pearl);font-family:'Sora',sans-serif;line-height:1.6}
+.w{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* Nav */
+nav{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo svg{width:28px;height:28px}
+.nav-logo span{font-family:'Fraunces',serif;font-size:18px;font-weight:600}
+.nav-logo em{color:var(--amber);font-style:italic}
+.nav-cta{padding:10px 24px;background:var(--green);border-radius:100px;font-size:11px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:1.5px;transition:transform .2s}
+.nav-cta:hover{transform:scale(1.05)}
+
+/* Hero */
+.hero{padding:50px 0 30px;text-align:center}
+.hero-badge{display:inline-block;padding:7px 22px;background:var(--green-dim);border:1px solid var(--green-border);border-radius:100px;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:22px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(30px,5vw,46px);font-weight:700;line-height:1.08;margin-bottom:12px}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.hero .sub{font-size:15px;color:var(--sand);max-width:460px;margin:0 auto 24px}
+.hero .price-row{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-bottom:22px}
+.hero .price{font-family:'Fraunces',serif;font-size:52px;font-weight:700;color:var(--green)}
+.hero .price-note{font-size:13px;color:var(--stone)}
+.hero .cta-main{display:inline-block;padding:16px 52px;background:var(--green);border-radius:100px;font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:1.5px;transition:transform .2s;box-shadow:0 6px 24px rgba(0,210,106,.15)}
+.hero .cta-main:hover{transform:scale(1.05)}
+.hero .trust{margin-top:14px;font-size:11px;color:var(--stone)}
+
+/* Stats */
+.stats{padding:24px 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.stat-box{background:var(--smoke);border:1px solid var(--fog);border-radius:10px;padding:14px 22px;text-align:center;min-width:100px}
+.stat-num{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--amber);line-height:1}
+.stat-label{font-size:8px;color:var(--stone);letter-spacing:1px;margin-top:3px}
+
+/* Section base */
+section{padding:44px 0;border-top:1px solid var(--fog)}
+section h2{font-family:'Fraunces',serif;font-size:26px;text-align:center;margin-bottom:6px}
+section h2 em{font-style:italic;color:var(--amber)}
+section .sub{text-align:center;font-size:12px;color:var(--stone);margin-bottom:24px}
+
+/* What's inside */
+.inside-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.inside-card{background:var(--smoke);border:1px solid var(--fog);border-radius:10px;padding:20px;border-left:3px solid var(--amber);transition:border-color .3s}
+.inside-card:hover{border-color:var(--green)}
+.inside-card .ic-emoji{font-size:24px;margin-bottom:8px}
+.inside-card h3{font-family:'Fraunces',serif;font-size:16px;margin-bottom:4px}
+.inside-card p{font-size:11px;color:var(--stone);line-height:1.5}
+
+/* Prompts */
+.prompts-list{display:flex;flex-direction:column;gap:8px}
+.prompt-item{background:var(--smoke);border:1px solid var(--fog);border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.prompt-num{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--amber);min-width:28px}
+.prompt-name{font-size:13px;font-weight:600;color:var(--pearl)}
+.prompt-desc{font-size:10px;color:var(--stone);margin-top:2px}
+.prompt-check{margin-left:auto;color:var(--green);font-size:14px}
+
+/* Tools */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.tool-card{background:var(--smoke);border:1px solid var(--fog);border-radius:8px;padding:12px;text-align:center;transition:border-color .3s}
+.tool-card:hover{border-color:var(--amber)}
+.tool-card .t-emoji{font-size:22px;margin-bottom:4px}
+.tool-card .t-name{font-size:12px;font-weight:600;color:var(--pearl)}
+.tool-card .t-desc{font-size:9px;color:var(--stone);margin-top:2px}
+
+/* Checklist */
+.check-days{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.check-day{background:var(--smoke);border:1px solid var(--fog);border-radius:10px;padding:16px;text-align:center}
+.check-day .cd-num{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--amber);line-height:1}
+.check-day .cd-label{font-size:9px;color:var(--stone);letter-spacing:1px;margin-top:2px;margin-bottom:8px}
+.check-day .cd-title{font-size:12px;font-weight:600;color:var(--pearl);margin-bottom:4px}
+.check-day .cd-desc{font-size:10px;color:var(--stone);line-height:1.4}
+
+/* Comparison */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.compare-col{border-radius:10px;padding:20px}
+.compare-free{background:var(--smoke);border:1px solid var(--fog)}
+.compare-paid{background:rgba(212,136,74,.06);border:1px solid rgba(212,136,74,.15)}
+.compare-col h3{font-family:'Fraunces',serif;font-size:16px;margin-bottom:10px}
+.compare-col .cp-price{font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:8px}
+.compare-free .cp-price{color:var(--green)}
+.compare-paid .cp-price{color:var(--amber)}
+.compare-col li{font-size:11px;color:var(--sand);padding:3px 0;list-style:none}
+.compare-col li::before{content:'·';color:var(--stone);margin-right:6px}
+.compare-paid li::before{content:'✓';color:var(--amber);margin-right:6px}
+.compare-note{text-align:center;font-size:11px;color:var(--stone);margin-top:12px;font-style:italic}
+
+/* FAQ */
+.faq-list{max-width:600px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--fog);padding:14px 0}
+.faq-q{font-size:13px;font-weight:600;color:var(--pearl);margin-bottom:4px}
+.faq-a{font-size:12px;color:var(--stone);line-height:1.5}
+
+/* Final CTA */
+.final-cta{padding:50px 0;text-align:center;border-top:1px solid var(--fog)}
+.final-cta h2{font-family:'Fraunces',serif;font-size:clamp(22px,4vw,34px);margin-bottom:10px}
+.final-cta h2 em{color:var(--amber);font-style:italic}
+.final-cta .sub{font-size:13px;color:var(--stone);margin-bottom:20px}
+.final-cta .price-big{font-family:'Fraunces',serif;font-size:60px;font-weight:700;color:var(--green);margin-bottom:4px}
+.final-cta .price-sub{font-size:11px;color:var(--stone);margin-bottom:20px}
+.final-cta .cta-main{display:inline-block;padding:18px 56px;background:var(--green);border-radius:100px;font-size:15px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:1.5px;transition:transform .2s;box-shadow:0 8px 28px rgba(0,210,106,.18)}
+.final-cta .cta-main:hover{transform:scale(1.05)}
+.final-cta .note{margin-top:14px;font-size:10px;color:var(--stone)}
+
+.footer{padding:24px 0;text-align:center;border-top:1px solid var(--fog);font-size:10px;color:var(--stone)}
+
+@media(max-width:600px){.check-days{grid-template-columns:1fr}.compare{grid-template-columns:1fr}.stats{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+<div class="w">
+
+<nav>
+<div class="nav-logo">
+<svg viewBox="0 0 160 160" fill="none"><circle cx="80" cy="80" r="78" fill="#D4884A"/><rect x="44" y="44" width="16" height="16" rx="2" fill="#0F0F0F"/><rect x="64" y="44" width="16" height="16" rx="2" fill="#0F0F0F" opacity=".6"/><rect x="84" y="44" width="16" height="16" rx="2" fill="#0F0F0F"/><rect x="44" y="64" width="16" height="16" rx="2" fill="#0F0F0F" opacity=".6"/><rect x="64" y="64" width="16" height="16" rx="2" fill="#0F0F0F"/><rect x="84" y="64" width="16" height="16" rx="2" fill="#0F0F0F" opacity=".6"/><rect x="44" y="84" width="16" height="16" rx="2" fill="#0F0F0F"/><rect x="64" y="84" width="16" height="16" rx="2" fill="#0F0F0F" opacity=".6"/><rect x="84" y="84" width="16" height="16" rx="2" fill="#0F0F0F"/></svg>
+<span>Pxl<em>craft</em></span>
+</div>
+<a href="#descarregar" class="nav-cta">DESCARREGAR GRÁTIS</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-badge">GRATUITO</div>
+<h1>Kit de Arranque<br><em>Digital</em></h1>
+<p class="sub">O primeiro passo para transformar a presença digital do teu negócio. 5 prompts, 10 ferramentas, checklist de 3 dias — tudo grátis.</p>
+<div class="price-row"><span class="price">€0</span><span class="price-note">download imediato<br>só precisa de email</span></div>
+<a href="#descarregar" class="cta-main">DESCARREGAR AGORA</a>
+<div class="trust">✓ PDF pronto a usar · ✓ Sem cartão de crédito · ✓ Sem spam</div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+<div class="stat-box"><div class="stat-num">5</div><div class="stat-label">PROMPTS</div></div>
+<div class="stat-box"><div class="stat-num">10</div><div class="stat-label">FERRAMENTAS</div></div>
+<div class="stat-box"><div class="stat-num">3</div><div class="stat-label">DIAS</div></div>
+<div class="stat-box"><div class="stat-num">€0</div><div class="stat-label">PREÇO</div></div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+<section>
+<h2>O que está <em>dentro</em></h2>
+<p class="sub">Tudo o que precisas para começar — organizado e pronto a usar</p>
+<div class="inside-grid">
+<div class="inside-card"><div class="ic-emoji">🎯</div><h3>5 Prompts de ChatGPT</h3><p>Prontos a copiar e colar. Paleta de cores, calendário de 12 posts, bio de Instagram, legendas com hook, e respostas automáticas para FAQ.</p></div>
+<div class="inside-card"><div class="ic-emoji">🔧</div><h3>10 Ferramentas Gratuitas</h3><p>As essenciais para identidade visual, conteúdo, site e automação. Cada uma com explicação de quando e como usar.</p></div>
+<div class="inside-card"><div class="ic-emoji">📋</div><h3>Checklist de 3 Dias</h3><p>Do zero ao feed profissional em 3 dias. Dia 1: identidade. Dia 2: conteúdo. Dia 3: publicar e automatizar. ~6 horas no total.</p></div>
+<div class="inside-card"><div class="ic-emoji">📅</div><h3>Calendário Editorial</h3><p>Template pronto para organizar 1 mês de publicações. Preenche com o prompt #2 e tens 12 posts planeados em 3 minutos.</p></div>
+</div>
+</section>
+
+<!-- 5 PROMPTS -->
+<section>
+<h2>Os 5 <em>Prompts</em></h2>
+<p class="sub">Copia, cola no ChatGPT, resultado em minutos</p>
+<div class="prompts-list">
+<div class="prompt-item"><span class="prompt-num">#1</span><div><div class="prompt-name">Paleta de Cores Profissional</div><div class="prompt-desc">5 cores com hex codes e onde usar cada uma</div></div><span class="prompt-check">✓</span></div>
+<div class="prompt-item"><span class="prompt-num">#2</span><div><div class="prompt-name">Calendário de 12 Posts</div><div class="prompt-desc">1 mês com datas, pilares, temas e formatos</div></div><span class="prompt-check">✓</span></div>
+<div class="prompt-item"><span class="prompt-num">#3</span><div><div class="prompt-name">Bio de Instagram</div><div class="prompt-desc">3 versões prontas — com emoji, diferencial e CTA</div></div><span class="prompt-check">✓</span></div>
+<div class="prompt-item"><span class="prompt-num">#4</span><div><div class="prompt-name">Legenda com Hook</div><div class="prompt-desc">Texto que prende na primeira linha e converte no final</div></div><span class="prompt-check">✓</span></div>
+<div class="prompt-item"><span class="prompt-num">#5</span><div><div class="prompt-name">Respostas Automáticas FAQ</div><div class="prompt-desc">8 respostas rápidas para Instagram Direct</div></div><span class="prompt-check">✓</span></div>
+</div>
+</section>
+
+<!-- 10 TOOLS -->
+<section>
+<h2>As 10 <em>Ferramentas</em></h2>
+<p class="sub">Todas 100% gratuitas — com passo a passo no kit</p>
+<div class="tools-grid">
+<div class="tool-card"><div class="t-emoji">🎨</div><div class="t-name">Canva</div><div class="t-desc">Posts, logo, vídeos</div></div>
+<div class="tool-card"><div class="t-emoji">🤖</div><div class="t-name">ChatGPT</div><div class="t-desc">Legendas, bios, ideias</div></div>
+<div class="tool-card"><div class="t-emoji">🎨</div><div class="t-name">Coolors</div><div class="t-desc">Paletas em segundos</div></div>
+<div class="tool-card"><div class="t-emoji">🔤</div><div class="t-name">Google Fonts</div><div class="t-desc">Tipografia gratuita</div></div>
+<div class="tool-card"><div class="t-emoji">📱</div><div class="t-name">Meta Business</div><div class="t-desc">Agendar posts grátis</div></div>
+<div class="tool-card"><div class="t-emoji">🌐</div><div class="t-name">Carrd</div><div class="t-desc">Landing page rápida</div></div>
+<div class="tool-card"><div class="t-emoji">🎬</div><div class="t-name">CapCut</div><div class="t-desc">Editar vídeo grátis</div></div>
+<div class="tool-card"><div class="t-emoji">🎙️</div><div class="t-name">ElevenLabs</div><div class="t-desc">Voz IA em português</div></div>
+<div class="tool-card"><div class="t-emoji">📋</div><div class="t-name">Notion</div><div class="t-desc">Organizar tudo</div></div>
+<div class="tool-card"><div class="t-emoji">📅</div><div class="t-name">Tidycal</div><div class="t-desc">Agendamento grátis</div></div>
+</div>
+</section>
+
+<!-- CHECKLIST -->
+<section>
+<h2>Checklist de <em>3 Dias</em></h2>
+<p class="sub">Do zero ao feed profissional — ~6 horas no total</p>
+<div class="check-days">
+<div class="check-day"><div class="cd-num">1</div><div class="cd-label">DIA</div><div class="cd-title">Identidade + Perfil</div><div class="cd-desc">Paleta de cores, fontes, bio, foto de perfil</div></div>
+<div class="check-day"><div class="cd-num">2</div><div class="cd-label">DIA</div><div class="cd-title">Conteúdo</div><div class="cd-desc">Calendário, legendas, posts no Canva</div></div>
+<div class="check-day"><div class="cd-num">3</div><div class="cd-label">DIA</div><div class="cd-title">Publicar + Automatizar</div><div class="cd-desc">Posts no ar, agendados, FAQ automáticas</div></div>
+</div>
+</section>
+
+<!-- COMPARISON -->
+<section>
+<h2>Kit Grátis vs <em>Guia Completo</em></h2>
+<p class="sub">O kit é o primeiro passo — o guia completo vai mais longe</p>
+<div class="compare">
+<div class="compare-col compare-free">
+<h3>Kit Grátis</h3>
+<div class="cp-price">€0</div>
+<ul>
+<li>5 prompts</li>
+<li>10 ferramentas</li>
+<li>Checklist 3 dias</li>
+<li>1 template calendário</li>
+</ul>
+</div>
+<div class="compare-col compare-paid">
+<h3>E-book Completo</h3>
+<div class="cp-price">€7</div>
+<ul>
+<li>15 prompts (+10)</li>
+<li>40+ ferramentas (+30)</li>
+<li>Checklist 7 dias completa</li>
+<li>6 capítulos passo a passo</li>
+<li>Landing page template</li>
+<li>Estratégia de conteúdo</li>
+<li>Automação completa</li>
+<li>30 dias de garantia</li>
+</ul>
+</div>
+</div>
+<p class="compare-note">Começa pelo grátis. Se gostares, o guia completo custa menos que um almoço.</p>
+</section>
+
+<!-- FAQ -->
+<section>
+<h2>Perguntas <em>Frequentes</em></h2>
+<div class="faq-list">
+<div class="faq-item"><div class="faq-q">É mesmo grátis?</div><div class="faq-a">Sim. €0. Sem cartão de crédito. Só precisas de um email para receber o download.</div></div>
+<div class="faq-item"><div class="faq-q">Preciso de conhecimentos técnicos?</div><div class="faq-a">Não. Tudo é explicado para iniciantes. Se sabes usar um telemóvel, consegues seguir o kit.</div></div>
+<div class="faq-item"><div class="faq-q">Serve para o meu tipo de negócio?</div><div class="faq-a">Se tens um café, loja, salão, estúdio, clínica ou qualquer pequeno negócio — sim. Os prompts são adaptáveis a qualquer nicho.</div></div>
+<div class="faq-item"><div class="faq-q">As ferramentas são mesmo gratuitas?</div><div class="faq-a">Todas as 10 ferramentas têm versão gratuita funcional. Zero investimento.</div></div>
+<div class="faq-item"><div class="faq-q">Quanto tempo demora a aplicar?</div><div class="faq-a">A checklist está desenhada para 3 dias (~6 horas no total). Os prompts podem ser usados imediatamente.</div></div>
+<div class="faq-item"><div class="faq-q">Vou receber spam?</div><div class="faq-a">Não. Vais receber o download + 2 emails com dicas úteis nos dias seguintes. Podes cancelar quando quiseres.</div></div>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="descarregar">
+<h2>Transforma o teu negócio<br>em <em>3 dias</em></h2>
+<p class="sub">5 prompts · 10 ferramentas · Checklist · Calendário editorial</p>
+<div class="price-big">€0</div>
+<div class="price-sub">Download imediato · Só precisa de email</div>
+<a href="#" class="cta-main">DESCARREGAR GRÁTIS</a>
+<div class="note">Sem cartão de crédito · Sem compromisso · Sem spam</div>
+</section>
+
+<div class="footer">© 2026 Pxlcraft Studio · @pxlcraft.studio · gumroad.com/pxlcraft</div>
+
+</div>
+</body>
+</html>
